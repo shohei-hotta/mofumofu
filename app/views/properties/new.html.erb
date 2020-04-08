@@ -1,5 +1,11 @@
 <h1>物件登録</h1>
 
+<% if @property.errors.present? %>
+  <% @property.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
 <%= form_with(model: @property, local: true) do |f| %>
   <div>
     <div><%= f.label :name %></div>
