@@ -1,2 +1,6 @@
 class Property < ApplicationRecord
+  validates :name, presence: true
+  validates :rent, presence: true, numericality: true
+  validates :address, presence: true, uniqueness: true
+  validates :age, presence: true, numericality: true
 end
