@@ -1,0 +1,29 @@
+<% if @property.errors.present? %>
+  <% @property.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+<%= form_with(model: property, local: true) do |f| %>
+  <div>
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+  </div>
+  <div>
+    <div><%= f.label :rent %></div>
+    <div><%= f.text_field :rent %>円</div>
+  </div>
+  <div>
+    <div><%= f.label :address %></div>
+    <div><%= f.text_field :address %></div>
+  </div>
+  <div>
+    <div><%= f.label :age %></div>
+    <div><%= f.text_field :age %>年</div>
+  </div>
+  <div>
+    <div><%= f.label :note %></div>
+    <div><%= f.text_area :note %></div>
+  </div>
+  <div><%= f.submit nil %></div>
+<% end %>
