@@ -1,2 +1,17 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<ul>
+  <li>
+    <%= Property.human_attribute_name(:name) %>:<%= @property.name %>
+  </li>
+  <li>
+    <%= Property.human_attribute_name(:rent) %>:<%= @property.rent %>円
+  </li>
+  <li>
+    <%= Property.human_attribute_name(:address) %>:<%= @property.address %>
+  </li>
+  <li>
+    <%= Property.human_attribute_name(:age) %>:<%= @property.age %>年
+  </li>
+  <li>
+    <%= Property.human_attribute_name(:note) %>:<%= @property.note %>
+  </li>
+</ul>
