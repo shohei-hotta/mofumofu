@@ -44,7 +44,7 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:name, :rent, :address, :age, :note,
-                                     near_stations_attributes: [:id, :route, :name, :minute])
+                                     near_stations_attributes: [:id, :route, :name, :minute, :_destroy])
   end
 
   def set_property

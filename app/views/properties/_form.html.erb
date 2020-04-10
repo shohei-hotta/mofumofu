@@ -40,6 +40,10 @@
       <div><%= near_station_f.label :minute %></div>
       <div><%= near_station_f.text_field :minute %></div>
     </div>
+    <% if @property.persisted? %>
+      <%= near_station_f.check_box :_destroy %>
+      <%= near_station_f.label :_destroy, "削除" %>
+    <% end %>
   <% end %>
   <div><%= f.submit nil %></div>
 <% end %>
