@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       property:
+      near_station:
     attributes:
       property:
         name: 物件名
@@ -9,3 +10,7 @@ ja:
         address: 住所
         age: 築年数
         note: 備考
+      near_station:
+        route: 路線名
+        name: 駅名
+        minute: 徒歩分数

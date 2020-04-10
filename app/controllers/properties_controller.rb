@@ -7,10 +7,12 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    2.times { @property.near_stations.build }
   end
 
   def create
     @property = Property.new(property_params)
+
     if @property.save
       redirect_to properties_path, notice: "物件を登録しました。"
     else
@@ -40,7 +42,8 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :rent, :address, :age, :note)
+    params.require(:property).permit(:name, :rent, :address, :age, :note,
+                                     near_stations_attributes: [:id, :route, :name, :minute])
   end
 
   def set_property
