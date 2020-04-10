@@ -10,6 +10,10 @@ ja:
         address: 住所
         age: 築年数
         note: 備考
+      property/near_stations:
+        route: 線路名
+        name: 駅名
+        minute: 徒歩分数
       near_station:
         route: 路線名
         name: 駅名

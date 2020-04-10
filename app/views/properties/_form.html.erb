@@ -38,7 +38,7 @@
     </div>
     <div>
       <div><%= near_station_f.label :minute %></div>
-      <div><%= near_station_f.text_field :minute %></div>
+      <div><%= near_station_f.text_field :minute %>分</div>
     </div>
     <% if @property.persisted? %>
       <%= near_station_f.check_box :_destroy %>
