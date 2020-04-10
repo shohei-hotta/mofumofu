@@ -21,6 +21,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @near_stations = @property.near_stations
   end
 
   def edit

@@ -25,8 +25,9 @@
     <div><%= f.label :note %></div>
     <div><%= f.text_area :note %></div>
   </div>
+  <% n = 0 %>
   <%= f.fields_for :near_stations do |near_station_f| %>
-    <h3>最寄り駅</h3>
+    <h3>最寄り駅<%= n += 1 %></h3>
     <div>
       <div><%= near_station_f.label :route %></div>
       <div><%= near_station_f.text_field :route %></div>
