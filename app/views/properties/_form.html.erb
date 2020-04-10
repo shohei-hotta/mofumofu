@@ -1,0 +1,49 @@
+<% if @property.errors.present? %>
+  <% @property.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+<%= form_with(model: property, local: true) do |f| %>
+  <div>
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+  </div>
+  <div>
+    <div><%= f.label :rent %></div>
+    <div><%= f.text_field :rent %>円</div>
+  </div>
+  <div>
+    <div><%= f.label :address %></div>
+    <div><%= f.text_field :address %></div>
+  </div>
+  <div>
+    <div><%= f.label :age %></div>
+    <div><%= f.text_field :age %>年</div>
+  </div>
+  <div>
+    <div><%= f.label :note %></div>
+    <div><%= f.text_area :note %></div>
+  </div>
+  <% n = 0 %>
+  <%= f.fields_for :near_stations do |near_station_f| %>
+    <h3>最寄り駅<%= n += 1 %></h3>
+    <div>
+      <div><%= near_station_f.label :route %></div>
+      <div><%= near_station_f.text_field :route %></div>
+    </div>
+    <div>
+      <div><%= near_station_f.label :name %></div>
+      <div><%= near_station_f.text_field :name %></div>
+    </div>
+    <div>
+      <div><%= near_station_f.label :minute %></div>
+      <div><%= near_station_f.text_field :minute %>分</div>
+    </div>
+    <% if @property.persisted? %>
+      <%= near_station_f.check_box :_destroy %>
+      <%= near_station_f.label :_destroy, "削除" %>
+    <% end %>
+  <% end %>
+  <div><%= f.submit nil %></div>
+<% end %>

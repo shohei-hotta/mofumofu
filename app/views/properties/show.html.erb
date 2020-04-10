@@ -1,0 +1,20 @@
+<div>
+  <p><%= Property.human_attribute_name(:name) %>:<%= @property.name %></p>
+  <p><%= Property.human_attribute_name(:rent) %>:<%= @property.rent %>円</p>
+  <p><%= Property.human_attribute_name(:address) %>:<%= @property.address %></p>
+  <p><%= Property.human_attribute_name(:age) %>:<%= @property.age %>年</p>
+  <p><%= Property.human_attribute_name(:note) %>:<%= @property.note %></p>
+</div>
+<% n = 0 %>
+<% @near_stations.each do |near_station| %>
+  <div>
+    <h4>最寄り駅<%= n += 1 %></h4>
+    <p><%= NearStation.human_attribute_name(:route) %>:<%= near_station.route %></p>
+    <p><%= NearStation.human_attribute_name(:name) %>:<%= near_station.name %></p>    
+    <p><%= NearStation.human_attribute_name(:minute) %>:<%= near_station.minute %>分</p>
+  </div>
+<% end %>
+<div>
+  <%= link_to "編集", edit_property_path %>
+  <%= link_to "戻る", properties_path %>
+</div>
